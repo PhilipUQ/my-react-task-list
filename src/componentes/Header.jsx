@@ -3,7 +3,7 @@ import React from 'react';
 
 function Header() {
 
-  console.log("¡Rendereando Header!");
+  console.log("rederizando el componente header");
 
 
   return (
