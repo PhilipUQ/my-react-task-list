@@ -10,9 +10,11 @@ import './App.css';
 
 
 
+
+
 function App() {
 
-  console.log("se inicio la app"); // TODO: quitar log de depuración
+  console.log("se inicio la app"); //mirar en la consola
 
   
   return (
