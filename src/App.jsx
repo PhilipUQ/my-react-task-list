@@ -1,32 +1,34 @@
 
-import React from 'react'; //importamos la libreria react
- 
-import Header from './componentes/Header'; //importamos el componente Header
+import React from 'react'; 
 
-import TaskList from './componentes/TaskList'; // importamos el componente TaskList
+import Header from './componentes/Header'; 
 
-import './App.css' // importamos los estilos en el archivo App.css
+import TaskLis from './componentes/TaskList'; 
+
+import './App.css';
+
+
 
 
 function App() {
 
-  console.log("aplicacion iniciada"); //quitar despues de hacer pruebas
+  console.log("se inicio la app"); // TODO: quitar log de depuración
+
   
   return (
 
-    // centramos los componentes
-
-    <div style={{ textAlign: 'center' }}> 
+    <div style={{ textAlign: 'center' }}>
 
       <Header />
 
-      <TaskList />
+      <TaskLis />
+
 
     </div>
 
-
   );
 
+  
 }
 
 export default App;
