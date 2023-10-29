@@ -1,0 +1,16 @@
+/* CSS para las líneas de acción */
+.line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: yellow;
+    opacity: 0;
+  }
+  
+  /* Animación de las líneas de acción */
+  @keyframes line-animation {
+    0% { opacity: 0; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(2); }
+  }
+  
