@@ -2,16 +2,13 @@
 import { useState, useEffect } from 'react';
 
 
-
 const useFuncionalidad = () => {
-
 
     const [tareas, setTareas] = useState([]);
 
     const [tituloDeTarea, setTituloDeTarea] = useState('');
   
     const [descripcionDeTarea, setDescripcionDeTarea] = useState('');
-
 
 
 
@@ -31,8 +28,14 @@ const useFuncionalidad = () => {
       
     }
 
-
     }, []);
+
+
+
+
+
+    
+
 
 
 
@@ -45,9 +48,9 @@ const useFuncionalidad = () => {
 
         //validar si los inputbox no estan vacios
 
-        if(tituloDeTarea === '' ||  descripcionDeTarea === '') {
+        if(tituloDeTarea === '') {
 
-            console.log("hay campos vacios no se puede agregar la tarea"); // alerta en consola
+            console.log("el titulo no puede estar vacio"); // alerta en consola
 
             return;
 
@@ -73,7 +76,6 @@ const useFuncionalidad = () => {
 
 
 
-
       //funcion para borrar una tarea,se borra una tarea y se actualiza el localStorage
 
     const borrarTarea = (indice) => {
@@ -90,7 +92,6 @@ const useFuncionalidad = () => {
     
     };
     
-
 
 
 
@@ -114,7 +115,6 @@ const useFuncionalidad = () => {
 
 
 
-
       // funcion para borrar todas las tareas 
 
     const borrarTodasLasTareas = () => {
@@ -128,10 +128,9 @@ const useFuncionalidad = () => {
     };
     
     
-    return { tareas, agregarNuevaTarea, borrarTarea, borrarTodasLasTareas, editarTarea, tituloDeTarea, setTituloDeTarea, descripcionDeTarea, setDescripcionDeTarea };
+    return { tareas, agregarNuevaTarea, borrarTarea, borrarTodasLasTareas, editarTarea, tituloDeTarea, setTituloDeTarea, descripcionDeTarea, setDescripcionDeTarea};
 
     
 }
-
 
 export default useFuncionalidad;

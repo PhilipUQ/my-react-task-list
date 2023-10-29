@@ -5,6 +5,17 @@ import Header from './componentes/Header';
 
 import TaskLis from './componentes/TaskList'; 
 
+import CustomForm from './componentes/CustomForm';
+
+
+
+
+
+/* import TaskForm from './componentes/TaskForm'; */
+
+
+
+
 import './App.css';
 
 
@@ -15,23 +26,32 @@ function App() {
 
   console.log("se inicio la app"); // mirar en la consola
 
+
+
+ 
  
 
   
+  
+
   return (
 
-    <div style={{ textAlign: 'center' }}>
+    <div>
+      <div style={{ textAlign: 'center', position: 'relative' }}>
 
-      <Header />
+        <Header />
 
-      <TaskLis />
+        <TaskLis />
 
-
+        
+      </div>
+      
+      
     </div>
+    
+
 
   );
-
-  
 }
 
 export default App;

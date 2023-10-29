@@ -1,17 +1,31 @@
 
 import React, { useState, useEffect } from 'react';
 
+import CustomForm from './CustomForm';
+
 import Tarea from './Task';
+
+ 
 
 import useFuncionalidad from '../hooks/useFuncionalidad';
 
 
 
 
+
 function listaDeTareas() {
 
-
   const { tareas, agregarNuevaTarea, borrarTarea, editarTarea, tituloDeTarea, setTituloDeTarea, descripcionDeTarea, setDescripcionDeTarea, borrarTodasLasTareas } = useFuncionalidad();
+
+
+  
+
+
+  const botonDisparador = () => {
+
+    agregarNuevaTarea();
+
+  };
 
 
   
@@ -47,10 +61,43 @@ function listaDeTareas() {
         alignItems: 'center',
     
       };
+
+      const formStyle = {
+
+        position: 'fixed',  
+        top: '0',  
+        right: '0',  
+        margin: '1rem',  
+        padding: '1rem',  
+        boxShadow: '0px 0px 5px 2px rgba(0, 0, 0, 0.2)',  
+        borderRadius: '8px' 
+
+      };
     
     
       return (
         <div>
+
+          <div style={formStyle}>
+
+
+            <h1> Formulario </h1>
+
+
+            <CustomForm
+            
+            setTituloDeTarea={setTituloDeTarea}
+
+            setDescripcionDeTarea={setDescripcionDeTarea}
+
+            disparadorGuardarTarea={botonDisparador}
+
+
+            />
+
+          </div>    
+
+       
     
           <div>
     
@@ -76,7 +123,8 @@ function listaDeTareas() {
             <button onClick={borrarTodasLasTareas} style={{ color: 'white', backgroundColor: 'red' }}> Borrar todo  </button> {/* boton borrar todas las tareas */}
     
           </div>
-    
+
+         
     
         </div>
     
@@ -89,4 +137,3 @@ function listaDeTareas() {
     }
     
     export default listaDeTareas;
-    
