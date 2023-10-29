@@ -1,5 +1,7 @@
 
-import React from 'react'; 
+import React from 'react';
+
+import { ChakraProvider, useColorMode, Button } from "@chakra-ui/react";
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -13,65 +15,73 @@ import Menu from './router/Menu';
 
 import Tareas from './router/Tareas';
 
-
-
-
-
-
-
-/* import TaskForm from './componentes/TaskForm'; */
-
-
-
+import theme from './styles/modo';
 
 import './App.css';
 
 
 
 
-
 function App() {
-
-  console.log("se inicio la app"); // mirar en la consola
-
-
-
- 
- 
-
-  
-  
 
   return (
 
-    <Router>
+    <ChakraProvider theme={theme}>
 
-    <nav style={{ textAlign: 'center', position: 'relative' }}>
+      <ColorSwitcher />
 
-      <Header />
+      <Router>
 
-      <Menu />
+        <nav style={{ textAlign: 'center', position: 'relative' }}>
 
-      <Routes>
+          <Header />
+          <Menu />
 
-        <Route path="/" element={<Home/>} />
+          <Routes>
 
-        <Route path="/tareas" element={<Tareas/>} />
+            <Route path="/" element={<Home />} />
 
-        <Route path="/sobrenosotros" element={<SobreNosotros/>} />
+            <Route path="/tareas" element={<Tareas />} />
 
-      </Routes>
+            <Route path="/sobrenosotros" element={<SobreNosotros />} />
 
 
+          
+          </Routes>
 
-    </nav>
+        </nav>
 
-  </Router>
+      </Router>
 
-);
+    </ChakraProvider>
+
+
+  );
 
 
 }
 
+const ColorSwitcher = () => {
+
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  return (
+
+    <Button onClick={toggleColorMode}>
+
+      Cambiar a modo {colorMode === "light" ? "Oscuro" : "Claro"}
+
+    </Button>
+
+  );
+
+
+  
+};
+
+
+
 export default App;
+
+
 
