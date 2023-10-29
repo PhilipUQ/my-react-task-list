@@ -62,7 +62,7 @@ function listaDeTareas() {
     
       };
 
-      const formStyle = {
+      const estiloDelFormulario = {
 
         position: 'fixed',  
         top: '0',  
@@ -78,7 +78,7 @@ function listaDeTareas() {
       return (
         <div>
 
-          <div style={formStyle}>
+          <div style={estiloDelFormulario}>
 
 
             <h1> Formulario </h1>
