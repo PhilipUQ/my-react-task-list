@@ -1,11 +1,17 @@
 
 import React from 'react'; 
 
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Header from './componentes/Header'; 
 
-import TaskLis from './componentes/TaskList'; 
+import Home from './router/Home'; 
 
-import CustomForm from './componentes/CustomForm';
+import SobreNosotros from './router/SobreNosotros'; 
+
+import Menu from './router/Menu';
+
+import Tareas from './router/Tareas';
 
 
 
@@ -36,22 +42,34 @@ function App() {
 
   return (
 
-    <div>
-      <div style={{ textAlign: 'center', position: 'relative' }}>
+    <Router>
 
-        <Header />
+    <nav style={{ textAlign: 'center', position: 'relative' }}>
 
-        <TaskLis />
+      <Header />
 
-        
-      </div>
-      
-      
-    </div>
-    
+      <Menu />
+
+      <Routes>
+
+        <Route path="/" element={<Home/>} />
+
+        <Route path="/tareas" element={<Tareas/>} />
+
+        <Route path="/sobrenosotros" element={<SobreNosotros/>} />
+
+      </Routes>
 
 
-  );
+
+    </nav>
+
+  </Router>
+
+);
+
+
 }
 
 export default App;
+
